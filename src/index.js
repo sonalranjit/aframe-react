@@ -44,5 +44,16 @@ class App extends React.Component {
   }
 }
 
+class LandingPage extends React.Component {
+  render(){
+    document.body.style.backgroundColor = "#EEF6FC";
+    return(
+      <div style={{display: 'flex', justifyContent: 'center'}}>
+        <div>centered content</div>
+      </div>
+    );
+  }
+}
 
-ReactDOM.render(<App />, document.querySelector('#sceneContainer'));
+
+ReactDOM.render(<LandingPage />, document.querySelector('#sceneContainer'));
