@@ -5,7 +5,9 @@ import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Glyphicon, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, NavDropdown, MenuItem, Glyphicon, Button, Grid, Row, Col, ButtonGroup,
+DropdownButton, Jumbotron} from 'react-bootstrap';
+import './index.css';
 
 
 class Aframe extends React.Component {
@@ -46,14 +48,52 @@ class App extends React.Component {
 
 class LandingPage extends React.Component {
   render(){
-    document.body.style.backgroundColor = "#EEF6FC";
+    const startBtn =  {backgroundColor: '#000000',
+                       color: '#ffffff'};
+
     return(
-      <div style={{display: 'flex', justifyContent: 'center'}}>
-        <div>centered content</div>
-      </div>
+      <Grid className="center-div">
+        <Row>
+          <Col xs={12} md={8}><h1 className="text-center">AODA Call for Action</h1></Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={8}><h4 className="text-center">Enabling Change</h4></Col>
+        </Row>
+        <Row>
+          <Col xs={10} md={6}>
+            <ButtonGroup justified>
+              <DropdownButton title="Choose your scene" id="bg-nested-dropdown">
+                <MenuItem eventKey="1">Office Space</MenuItem>
+                <MenuItem eventKey="2">Restaurant</MenuItem>
+              </DropdownButton>
+            </ButtonGroup>
+          </Col>
+          <Col xs={6} md={4}>
+            <Button style={startBtn}>Start</Button>
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
 
+class TestClass extends React.Component {
+  render(){
+    return(
+      <Jumbotron className="center-div">
+        <h1> AODA Call for Action</h1>
+        <p> Enabling Change</p>
+        <Grid>
+          <Row>
+            <Col xs={6} md={4}>Menu</Col>
+            <Col xs={6} md={4}>
+              <Button>Start</Button>
+            </Col>
+          </Row>
+        </Grid>
+      </Jumbotron>
+    );
+  }
+}
 
-ReactDOM.render(<LandingPage />, document.querySelector('#sceneContainer'));
+ReactDOM.render(<LandingPage/>, document.querySelector('#sceneContainer'));
