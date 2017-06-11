@@ -100,10 +100,11 @@ function AframeNavbar(){
 
     <Scene>
       <a-assets>
-        <a-asset-item id="cubicle-obj" src="models/cubicle_room.obj"></a-asset-item>
-        <a-asset-item id="cubicle-mtl" src="models/cubicle_room.mtl"></a-asset-item>
+        <a-asset-item id="officeroom-obj" src="models/Room01.obj"></a-asset-item>
+        <a-asset-item id="officeroom-mtl" src="models/Room01.mtl"></a-asset-item>
       </a-assets>
-      <a-entity obj-model="obj: #cubicle-obj; mtl: #cubicle-mtl;" scale="1 1 1"
+      <a-entity obj-model="obj: #officeroom-obj; mtl: #officeroom-mtl;" 
+        scale="1 1 1"
         rotation="0 0 0"
         position="1 1 1">
       </a-entity>        
