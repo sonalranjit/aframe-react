@@ -28,6 +28,18 @@ class AodaPage extends React.Component{
   }
 }
 
+class JumbotronPage extends React.Component{
+  render(){
+    return(
+      <Jumbotron>
+        <h1>Hello, World</h1>
+        <p> This is a simple hero unit, a simple jumbotron-styple component</p>
+        <p><Button bsStyle="primary">Learn more</Button></p>
+      </Jumbotron>
+    );
+  }
+}
+
 function ViewRenderer(props){
   const isAframe = props.isAframe;
   if(isAframe){
@@ -74,11 +86,11 @@ function LandingPage(props){
 function Aframe(){
   return(
     <Scene>
-        <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-        <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-        <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="FFC65D"></a-cylinder>
-        <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-        <a-sky color="#ECECEC"></a-sky>
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="FFC65D"></a-cylinder>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      <a-sky color="#ECECEC"></a-sky>
     </Scene>
   );
 }
@@ -86,18 +98,6 @@ function Aframe(){
 function AframeNavbar(){
   return(
     <div>
-    <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Glyphicon glyph="menu-left"/>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          <NavItem eventKey={1}>AODA Call for Action</NavItem>
-          <NavItem eventKey={2}>Office Space</NavItem>
-        </Nav>
-    </Navbar>
-
     <Scene>
       <a-assets>
         <a-asset-item id="officeroom-obj" src="models/Room01.obj"></a-asset-item>
@@ -107,9 +107,19 @@ function AframeNavbar(){
         scale="1 1 1"
         rotation="0 0 0"
         position="1 1 1">
-      </a-entity>        
+      </a-entity>
       <a-sky color="#ECECEC"></a-sky>
+      <a-camera><a-cursor></a-cursor></a-camera>
     </Scene>
+    <Navbar collapseOnSelect>
+      <Navbar.Collapse>
+        <Nav>
+          <NavItem eventKey={1}><Glyphicon glyph="menu-hamburger"/></NavItem>
+          <NavItem eventKey={2}><b>AODA Call for Action</b></NavItem>
+          <NavItem eventKey={3}>Office Space</NavItem>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
     </div>
   );
 }
