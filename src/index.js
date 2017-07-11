@@ -100,8 +100,8 @@ function AframeNavbar(){
     <div>
     <Scene>
       <a-assets>
-        <a-asset-item id="officeroom-obj" src="models/Room01.obj"></a-asset-item>
-        <a-asset-item id="officeroom-mtl" src="models/Room01.mtl"></a-asset-item>
+        <a-asset-item id="officeroom-obj" src="models/room02.obj"></a-asset-item>
+        <a-asset-item id="officeroom-mtl" src="models/room02.mtl"></a-asset-item>
       </a-assets>
       <a-entity obj-model="obj: #officeroom-obj; mtl: #officeroom-mtl;" 
         scale="1 1 1"
